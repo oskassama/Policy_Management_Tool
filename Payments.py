@@ -33,7 +33,7 @@ class Payments:
 
     #add penalty for payment
     @classmethod
-    def set_payment_reminder(cls, payment_data, penalty_fee):
+    def add_penalty_fee(cls, payment_data, penalty_fee):
         # updates payment penalty_fee
         payment_data.penalty_fee = penalty_fee
         # return updated payment object
@@ -51,7 +51,7 @@ product_3 = Products.create_product(3, "Medical Insurance", "Provides financial 
 
 #make payments for policy jolder 1 and 2
 payment_for_policy_holder_1 = Payments.make_payment(1, policy_holder_1.policy_id, product_1.product_id, product_1.product_cost, "2024-12-10", "", 0, 0)
-payment_for_policy_holder_2 = Payments.make_payment(1, policy_holder_2.policy_id, product_2.product_id, product_2.product_cost, "2024-12-10", "", 0, 0)
+payment_for_policy_holder_2 = Payments.make_payment(2, policy_holder_2.policy_id, product_2.product_id, product_2.product_cost, "2024-12-10", "", 0, 0)
 
 #source: https://favtutor.com/blogs/print-object-attributes-python
 #print policy holder and payment details
